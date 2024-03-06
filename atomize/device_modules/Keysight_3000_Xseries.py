@@ -16,7 +16,7 @@ class Keysight_3000_Xseries:
         #### Inizialization
         # setting path to *.ini file
         self.path_current_directory = os.path.dirname(__file__)
-        self.path_config_file = os.path.join(self.path_current_directory, 'config','Keysight_3034t_config.ini')
+        self.path_config_file = os.path.join(self.path_current_directory, 'config','Keysight_3014g_config.ini')
 
         # configuration data
         self.config = cutil.read_conf_util(self.path_config_file)
