@@ -23,7 +23,7 @@ class Keysight_3000_Xseries:
         self.specific_parameters = cutil.read_specific_parameters(self.path_config_file)
 
         # auxilary dictionaries
-        self.points_list = [100, 250, 500, 1000, 2000, 5000, 10000, 20000, 50000, 100000, 200000, 500000]
+        self.points_list = [100, 250, 500, 1000, 2000, 5000, 10000, 20000, 50000, 100000, 200000, 500000, 1000000, 2000000, 4000000, 8000000]
         self.points_list_average = [100, 250, 500, 1000, 2000, 4000, 8000, 16000]
         # Number of point is different for Average mode and three other modes
 
@@ -142,7 +142,7 @@ class Keysight_3000_Xseries:
 
     def device_read_binary(self, command):
         if self.status_flag == 1:
-            answer = self.device.query_binary_values(command, 'H', is_big_endian=True, container=np.array)
+            answer = self.device.query_binary_values(command, 'h', is_big_endian=True, container=np.array)
             # H for 3034T; h for 2012A
             return answer
         else:
